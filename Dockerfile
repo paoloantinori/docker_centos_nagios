@@ -24,5 +24,7 @@ RUN chmod 0755 /etc/nagios/capture_plugin.pl
 RUN htpasswd -bc /etc/nagios/passwd nagiosadmin nagiosadmin
 RUN chmod -R a+rwx /var/log/nagios /var/spool/nagios/cmd/
 
+ADD https://github.com/paoloantinori/docker_centos_nagios/blob/master/startNagios.sh /root
+RUN chmod a+x /root/startNagios.sh
 CMD ["/root/startNagios.sh"]
 
