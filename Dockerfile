@@ -6,8 +6,6 @@ RUN yum -y install http://download.fedoraproject.org/pub/epel/6/i386/epel-releas
 RUN yum -y install nagios nagios-common nagios-plugins nagios-plugins-by_ssh nagios-plugins-disk nagios-plugins-http nagios-plugins-load nagios-plugins-nagios nagios-plugins-perl nagios-plugins-ping nagios-plugins-procs nagios-plugins-ssh nagios-plugins-swap nagios-plugins-users
 RUN yum -y install perl-Class-Accessor perl-common-sense perl-Config-Tiny perl-Crypt-Blowfish_PP perl-ExtUtils-CBuilder perl-ExtUtils-ParseXS perl-File-BaseDir perl-JSON perl-JSON-Any perl-JSON-XS perl-Math-Calc-Units perl-Module-Build perl-Module-Find perl-Nagios-Plugin perl-Term-ShellUI perl-Config-General perl-Test-Simple perl-Time-HiRes perl-Sys-SigAction
 
-RUN service httpd start ; service nagios start
-
 ADD http://search.cpan.org/CPAN/authors/id/R/RO/ROLAND/jmx4perl-1.07.tar.gz /root/
 
 RUN tar -xvf /root/jmx4perl* -C /root
