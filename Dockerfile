@@ -4,7 +4,7 @@ MAINTAINER Paolo Antinori <pantinor@redhat.com>
 
 RUN yum -y install http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 RUN yum -y install nagios nagios-common nagios-plugins nagios-plugins-by_ssh nagios-plugins-disk nagios-plugins-http nagios-plugins-load nagios-plugins-nagios nagios-plugins-perl nagios-plugins-ping nagios-plugins-procs nagios-plugins-ssh nagios-plugins-swap nagios-plugins-users
-RUN yum -y install perl-Class-Accessor perl-common-sense perl-Config-Tiny perl-Crypt-Blowfish_PP perl-ExtUtils-CBuilder perl-ExtUtils-ParseXS perl-File-BaseDir perl-JSON perl-JSON-Any perl-JSON-XS perl-Math-Calc-Units perl-Module-Build perl-Module-Find perl-Nagios-Plugin perl-Term-ShellUI perl-Config-General perl-Test-Simple perl-Time-HiRes perl-Sys-SigAction
+RUN yum -y install perl-Class-Accessor perl-common-sense perl-Config-Tiny perl-Crypt-Blowfish_PP perl-ExtUtils-CBuilder perl-ExtUtils-ParseXS perl-File-BaseDir perl-JSON perl-JSON-Any perl-JSON-XS perl-Math-Calc-Units perl-Module-Build perl-Module-Find perl-Nagios-Plugin perl-Term-ShellUI perl-Config-General perl-Test-Simple perl-Time-HiRes perl-Sys-SigAction perl-Term-Size perl-Term-Size-Any 
 
 ADD http://search.cpan.org/CPAN/authors/id/R/RO/ROLAND/jmx4perl-1.07.tar.gz /root/
 
@@ -24,7 +24,9 @@ RUN chmod 0755 /etc/nagios/capture_plugin.pl
 RUN htpasswd -bc /etc/nagios/passwd nagiosadmin nagiosadmin
 RUN chmod -R a+rwx /var/log/nagios /var/spool/nagios/cmd/
 
-ADD . /bin
+ADD ./script /bin/
+ADD ./nagios_conf /etc/nagios/conf.d/
+
 RUN chmod +x /bin/startNagios.sh
 
 EXPOSE  80
