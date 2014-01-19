@@ -1,5 +1,15 @@
-Dockerfiles
+Readme
 -----------
+
+https://github.com/paoloantinori/dockercentosnagios
+
+
+##### description
+- Installs nagios through EPEL repository
+- Installs perl4jmx nagios plugin to monitor JMX based java application
+- Provide sample nagios checks for perl4jmx
+- Installs a perl script to debug nagios custom commands
+
 
 ##### build
     docker build -t pantinor/centos-nagios-jmx .
