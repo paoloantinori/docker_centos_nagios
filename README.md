@@ -2,10 +2,10 @@ Dockerfiles
 -----------
 
 ##### build
-    docker build -t pantinor/centos_nagios .
+    docker build -t pantinor/centos-nagios-jmx .
 
 ##### run
-    docker run -i -t -p 11111:80 pantinor/centos_nagios
+    docker run -i -t -p 11111:80 pantinor/centos-nagios-jmx
 
 ##### nagios test
     curl -u nagiosadmin:nagiosadmin http://127.0.0.1:11111/nagios/
