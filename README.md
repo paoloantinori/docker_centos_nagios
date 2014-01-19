@@ -33,3 +33,7 @@ https://github.com/paoloantinori/dockercentosnagios
 
 ##### j4psh test
     j4psh --user admin --password admin http://172.17.42.1:8012/jolokia
+    
+##### configuration
+[/etc/nagios/conf.d/commands_p4jmx.cfg](https://github.com/paoloantinori/docker_centos_nagios/blob/master/nagios_conf/commands_p4jmx.cfg)  
+[/etc/nagios/conf.d/services.cfg](https://github.com/paoloantinori/docker_centos_nagios/blob/master/nagios_conf/services.cfg)
