@@ -1,6 +1,6 @@
 FROM centos
 
-MAINTAINER paolo antinori - pantinor@redhat.com
+MAINTAINER Paolo Antinori <pantinor@redhat.com>
 
 RUN yum -y install http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 RUN yum -y install nagios nagios-common nagios-plugins nagios-plugins-by_ssh nagios-plugins-disk nagios-plugins-http nagios-plugins-load nagios-plugins-nagios nagios-plugins-perl nagios-plugins-ping nagios-plugins-procs nagios-plugins-ssh nagios-plugins-swap nagios-plugins-users
@@ -14,7 +14,7 @@ RUN awk '/\$msg,"y"/{c+=1;done=0}{if(done==0 && (c>2) ){sub("\"y\"","\"n\"",$0);
 RUN cd /root/jmx4perl-1.07 ; PERL_MM_USE_DEFAULT=1 perl /root/jmx4perl-1.07/BuildAnswered.PL
 RUN cd /root/jmx4perl-1.07 ; /root/jmx4perl-1.07/Build test
 RUN cd /root/jmx4perl-1.07 ; /root/jmx4perl-1.07/Build install
-RUN rm /root/jmx4perl-1.07* -rf
+#RUN rm /root/jmx4perl-1.07* -rf
 RUN sed -i s/+epn/-epn/g /usr/local/bin/check_jmx4perl
 
 ADD http://www.waggy.at/nagios/capture_plugin.txt /etc/nagios/capture_plugin.pl
