@@ -37,3 +37,4 @@ https://github.com/paoloantinori/dockercentosnagios
 ##### configuration
 [/etc/nagios/conf.d/commands_p4jmx.cfg](https://github.com/paoloantinori/docker_centos_nagios/blob/master/nagios_conf/commands_p4jmx.cfg)  
 [/etc/nagios/conf.d/services.cfg](https://github.com/paoloantinori/docker_centos_nagios/blob/master/nagios_conf/services.cfg)
+[/var/log/nagios/spool]

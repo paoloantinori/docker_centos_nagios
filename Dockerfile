@@ -16,6 +16,7 @@ RUN cd /root/jmx4perl-1.07 ; PERL_MM_USE_DEFAULT=1 perl /root/jmx4perl-1.07/Buil
 RUN cd /root/jmx4perl-1.07 ; /root/jmx4perl-1.07/Build test
 RUN cd /root/jmx4perl-1.07 ; /root/jmx4perl-1.07/Build install
 #RUN rm /root/jmx4perl-1.07* -rf
+# fix perl bizarre bug http://osdir.com/ml/network.nagios.devel/2007-07/msg00031.html
 RUN sed -i s/+epn/-epn/g /usr/local/bin/check_jmx4perl
 
 ADD http://www.waggy.at/nagios/capture_plugin.txt /etc/nagios/capture_plugin.pl
@@ -27,6 +28,9 @@ RUN chmod -R a+rwx /var/log/nagios /var/spool/nagios/cmd/
 
 ADD ./script /bin/
 ADD ./nagios_conf /etc/nagios/conf.d/
+ADD ./nagios_plugin /etc/nagios/scripts/
+
+RUN chmod +x /etc/nagios/scripts/check_bundle_by_name.py
 
 RUN chmod +x /bin/startNagios.sh
 
