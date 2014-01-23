@@ -7,7 +7,7 @@ https://index.docker.io/u/pantinor/centos-nagios-jmx/
 
 ##### description
 
-Centos based container that provides Nagios + plugins and sample configuration and scripts to monitor Java Application Servers/Container via JMX over HTTP using jolokia.
+Centos based container that provides Nagios + plugins and sample configuration and scripts to monitor Java Application Servers/Container(JBoss AS, Fuse ESB, Tomcat...) via JMX over HTTP using jolokia.
 
 - Installs nagios through EPEL repository
 - Installs perl4jmx nagios plugin to monitor JMX based java application
