@@ -50,7 +50,7 @@ ADD ./nagios_conf /etc/nagios/conf.d/
 ADD ./nagios_plugin /etc/nagios/scripts/
 
 # set execution permission to helper scripts
-RUN chmod +x /etc/nagios/scripts/capture_plugin.pl
+RUN chmod +rx /etc/nagios/scripts/capture_plugin.pl
 RUN chmod +x /etc/nagios/scripts/check_bundle_by_name.py
 RUN chmod +x /bin/startNagios.sh
 
