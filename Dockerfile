@@ -1,9 +1,12 @@
-FROM centos
+FROM centos:centos6
 
 MAINTAINER Paolo Antinori <pantinor@redhat.com>
 
 # install EPEL repo
 RUN yum -y install http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+
+# install tar
+RUN yum -y install tar
 
 # install nagios and a partial list of plugins to limit the number of dependencies
 RUN yum -y install nagios nagios-common nagios-plugins nagios-plugins-by_ssh nagios-plugins-disk nagios-plugins-http nagios-plugins-load nagios-plugins-nagios nagios-plugins-perl nagios-plugins-ping nagios-plugins-procs nagios-plugins-ssh nagios-plugins-swap nagios-plugins-users
